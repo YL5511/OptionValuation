@@ -14,14 +14,14 @@ using namespace std;
 class BinModel
 {
 private:
-    double S0;
-    double U;
-    double D;
-    double R;
+    double S0; // spot price
+    double U; //upward rate
+    double D; //downward rate
+    double R; //riskfree rate
 public:
     
-    double RiskNeutProb();
-    double S(int n, int i);
+    double RiskNeutProb(); //calculate the risk neutral probability 
+    double S(int n, int i); // calculate the stock price at node(n,i)
     int GetInputData();
     double GetR();
 };
