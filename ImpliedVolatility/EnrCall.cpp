@@ -24,15 +24,22 @@ double N(double x)   // calculate the cumulative probability of standard normal 
     else return 1.0-N(-x);
 }
 
-double EurCall::d_plus(double S0, double sigma, double r){return log(S0/K)+((r+0.5*sigma*sigma)*T)/(sigma*sqrt(T));}
+double EurCall::d_plus(double S0, double sigma, double r)
+{
+    return log(S0/K)+((r+0.5*sigma*sigma)*T)/(sigma*sqrt(T));
+}
 
-double EurCall::d_minus(double S0,double sigma, double r){return d_plus(S0,sigma,r)-sigma*sqrt(T);}
+double EurCall::d_minus(double S0,double sigma, double r)
+{
+    return d_plus(S0,sigma,r)-sigma*sqrt(T);
+}
 
 double EurCall::PriceByFormula(double S0, double sigma, double r)
 {
     return S0*N(d_plus(S0, sigma, r))-K*exp(-r*T)*N(d_minus(S0, sigma, r));
 }
 
-double EurCall::VegaByFormula(double S0, double sigma, double r){
+double EurCall::VegaByFormula(double S0, double sigma, double r)  // vega is the derivatives of the EuroOption call option price to volatility 
+{
     return S0*exp(-pow(d_plus(S0, sigma, r), 2)*0.5)/sqrt(2*4.0*atan(1.0));
 }
