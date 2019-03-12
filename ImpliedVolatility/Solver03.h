@@ -30,16 +30,6 @@ double SolveByBisect( Function* Fct,
     return mid;
 }
 
-template <typename Function>
-double SolveByNR(Function *Fct,double Tgt, double Guess, double Acc ){
-    double x_prev=Guess;
-    double x_next=x_prev-(Fct->Value(x_prev)-Tgt)/Fct->Deriv(x_prev);
-    while (x_next-x_prev>Acc || x_prev-x_next>Acc){
-        x_prev=x_next;
-        x_next=x_prev-(Fct->Value(x_prev)-Tgt)/Fct->Deriv(x_prev);   }
-    
-    return x_next;
-    
-}
+
 
 #endif /* Solver03_h */
