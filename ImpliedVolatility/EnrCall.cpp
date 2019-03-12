@@ -10,7 +10,7 @@
 #include "cmath"
 
 
-double N(double x)
+double N(double x)   // calculate the cumulative probability of standard normal distribution
 {
     double gamma = 0.2316419;    double a1 = 0.319381530;
     double a2    =-0.356563782;       double a3 = 1.781477937;
