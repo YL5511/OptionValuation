@@ -19,14 +19,14 @@ There is multi inheritance.
 class Option
 {
 private:
-    int N;
+    int N; //step to expire
 public:
     void SetN(int N_){N=N_;}
     int GetN(){return  N;}
     virtual double Payoff(double z)=0;  // Payoff is pure virtual function of the Option class. 
 };
 
-class EurOption: virtual public Option
+class EurOption: virtual public Option   //virtual inheritance 
 {
 
 public:
