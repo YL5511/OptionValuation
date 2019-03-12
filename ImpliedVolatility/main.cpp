@@ -39,15 +39,13 @@ public:
         double Tgt=12.56;
         cout << "Implied vol by bisect: "
         << SolveByBisect< Intermediary>(&Call,Tgt,LEnd,REnd,Acc) << endl;
-        double Guess=0.23;
-        cout << "Implied vol by Newton-Raphson: "
-        << SolveByNR < Intermediary>(&Call,Tgt,Guess,Acc) << endl;
+        
         return 0;
     }
 
 
 /*
  Implied vol by bisect: 0.999033
- Implied vol by Newton-Raphson:?/
+/
 
 
